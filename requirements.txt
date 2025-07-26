@@ -1,0 +1,16 @@
+# requirements.txt
+
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings  # <-- ADD THIS LINE
+GitPython
+pylint
+flake8
+radon
+sqlalchemy
+psycopg2-binary
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
+pandas             

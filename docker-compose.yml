@@ -1,0 +1,51 @@
+# docker-compose.yml
+
+version: '3.8'
+
+# docker-compose.yml
+
+services:
+  # The PostgreSQL Database Service
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=techdebt_db
+    # --- ADD THIS HEALTHCHECK SECTION ---
+    healthcheck:
+      # This command checks if the database is ready to accept connections.
+      test: ["CMD-SHELL", "pg_isready -U user -d techdebt_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # The FastAPI Application Service
+  # docker-compose.yml
+
+  # ... (the 'db' service and its healthcheck stay the same) ...
+
+  # The FastAPI Application Service
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+      - ./static:/app/static # <-- ADD THIS LINE
+
+    environment:
+      - GIT_PYTHON_GIT_EXECUTABLE=/usr/bin/git
+      # --- ADD THIS LINE TO FORCE THE CORRECT URL ---
+      - DATABASE_URL=postgresql://user:password@db:5432/techdebt_db
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data: {}
