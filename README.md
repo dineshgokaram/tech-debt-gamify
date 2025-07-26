@@ -1,8 +1,8 @@
 # Tech-Debt Gamify: A Gamified Technical Debt Management Platform
 
-![Dashboard Screenshot](<img width="1410" height="580" alt="Screenshot 2025-07-25 195058" src="https://github.com/user-attachments/assets/c9b96790-7b2a-4671-955a-819e0ce01a4b" />
+#Dashboard Screenshots 
+<img width="1410" height="580" alt="Screenshot 2025-07-25 195058" src="https://github.com/user-attachments/assets/c9b96790-7b2a-4671-955a-819e0ce01a4b" />
 <img width="1251" height="588" alt="Screenshot 2025-07-26 204034" src="https://github.com/user-attachments/assets/722ec1b2-3d86-4e6c-855c-1bcd784de24b" />
-) 
 
 Technical debt is a constant challenge in software development, often lacking the visibility and motivation for teams to address it. **Tech-Debt Gamify** is a full-stack, containerized web application that tackles this problem head-on. It analyzes Python code from public Git repositories for code quality issues and transforms the cleanup process into an engaging and competitive game for developers, complete with points, achievement badges, and a live leaderboard.
 
