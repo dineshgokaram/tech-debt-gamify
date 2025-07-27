@@ -75,10 +75,3 @@ Building this project was a comprehensive journey through the entire lifecycle o
 *   **Robust API & Database Design:** I designed a relational database schema with multiple one-to-many relationships and used SQLAlchemy to interact with it, learning to solve ORM-specific challenges like lazy vs. eager loading (`selectinload`).
 *   **Real-World Debugging:** A significant portion of this project involved diagnosing and fixing complex bugs. A critical challenge was resolving a **circular import** error, which required a significant but necessary refactoring of the application's structure to enforce single-direction dependencies.
 
-## 📈 Future Improvements
-
-*   **Enhanced Frontend:**
-    *   Integrate a modern framework like **React** to create a more dynamic user experience.
-    *   Build a UI for analyzing new projects and resolving issues directly from the dashboard.
-*   **CI/CD Pipeline:** Implement GitHub Actions to automatically run tests and linting on every push.
-*   **More Analysis Tools:** Integrate other static analysis tools like `radon` (for complexity metrics) into the scoring system.
